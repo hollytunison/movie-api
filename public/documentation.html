@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myFlix Movie App</title>
+</head>
+
+<body>
+    <h1> myFlix Documentation</h1>
+    <p>myFlix is a movie app is server-side built application that provides info about movies and its users. For this project I'm creating my own REST API and then implementating in REACT.
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Business Logic</th>
+                <th>URL</th>
+                <th>HTTP Method</th>
+                <th>Request body data format</th>
+                <th>Response body data format</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- RETURN LIST OF ALL MOVIES -->
+            <tr>
+                <td>Get a list of all movies</td>
+                <td>/movies</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>A JSON object holding data about all the movies</td>
+            </tr>
+            <!-- GET SINGLE MOVIE -->
+            <tr>
+                <td>Get data about a single movie by its title including: title, description, genre, director, star actors, image URL, rating, featured.</td>
+                <td>/movies/[Title]</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>
+                    A JSON object holding data about a single movie, containing title, director, and year. Example: <br> {<br>title: "The Godfather",
+                    <br>director: Francis Ford Coppola, <br>year: 1972 <br>}
+                </td>
+            </tr>
+            <!-- RETURN A GENRE -->
+            <tr>
+                <td>Return data about a genre, example: "Comedy".</td>
+                <td>/genre/[genre]</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>
+                    A JSON object holding data about a genre. Example: <br> {<br>genre: "Comedy: Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work
+                    by exaggerating characteristics for humorous effect.
+                </td>
+            </tr>
+            <!-- RETURN SINGLE DIRECTOR -->
+            <tr>
+                <td>Return data about a director: bio, birth year, death year by name.</td>
+                <td>/directors/[director]</td>
+                <td>GET</td>
+                <td>None</td>
+                <td>
+                    A JSON object holding data about a director.
+                    <br>director: Steven Spielberg, <br> {<br>directorID: 99, birthyear: 1946<br>}
+                </td>
+            </tr>
+            <!-- ALLOW NEW USERS TO REGISTER -->
+            <tr>
+                <td>Add a user</td>
+                <td>/users</td>
+                <td>POST</td>
+                <td>A JSON object holding data about a new user. Example: <br> { <br /> "user": "Jerry", <br /> "email": "jerry@gmail.com", <br /> "password": "jerry123", <br /> "DOB": "November 1, 1970", <br /> }
+                </td>
+                <td>A JSON object holding data about a new user with ID. Example: <br> { <br /> "id": 2, <br /> "user": "Jerry", <br /> "email": "jerry@gmail.com", <br /> "password": "jerry123", <br /> "DOB": "January 1, 1970", <br /> }
+                </td>
+            </tr>
+            <!-- ALLOW NEW USERS UPDATE THEIR INFO -->
+            <tr>
+                <td>Allow user to update info</td>
+                <td>/users/[username]</td>
+                <td>PUT</td>
+                <td>None</td>
+                <td>A JSON object holding data about a new user. Example: <br> {<br> Name: "testuser1",<br> Password: "testuser123",<br> Mail: "testuser1@gmail.com"<br> "Birthday": "January 1st, 1971"<br>}
+                </td>
+            </tr>
+            <!-- ALLOW USERS TO ADD A MOVIE TO THEIR LIST OF FAVORITES -->
+            <tr>
+                <td>Add a movie to a user's favorites</td>
+                <td>/users/[username]/movies/[movieID]</td>
+                <td>POST</td>
+                <td>None</td>
+                <td>A message that a movie was added to the user's favorties.</td>
+            </tr>
+            <!-- REMOVIE A MOVIE FROM USERS FAVORITES-->
+            <tr>
+                <td>Remove a movie by ID</td>
+                <td>/users/[username]/movies/[movieID]</td>
+                <td>DELETE</td>
+                <td>None</td>
+                <td>A text message that a movie has been removed from the user's favorites</td>
+            </tr>
+            <!-- ALLOW USERS TO DERISTER-->
+            <tr>
+                <td>Allow users to deregister</td>
+                <td>/users/[username]</td>
+                <td>DELETE</td>
+                <td>None</td>
+                <td>A message that a user has been removied</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
