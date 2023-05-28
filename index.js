@@ -4,11 +4,18 @@ morgan = require('morgan'),
   app = express(),
   bodyParser = require('body-parser');
   
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+const Movies = Models.Movie;
+const Users = Models.User;
+const Genres = Models.Genre;
+const Directors = Models.Director;
 
-
-//Middleware
-
+// middleware //
 app.use(bodyParser.json());
+
+
+
 
 let users = [
   {
@@ -38,7 +45,10 @@ let movies = [
       Bio: "George P. Cosmatos was a Greek-Italian film director and screenwriter. He was born on January 4, 1941, in Florence, Italy, to Greek parents. Cosmatos began his career as an assistant director in the Italian film industry before moving to the United States in the 1970s.",
       Birth: "1941",
       Death: "2005"
-	}},
+	},
+    ImagePath: "https://www.imdb.com/title/tt0108358/mediaviewer/rm2107331584/?ref_=ext_shr_lnk",
+    Featured: true
+},
 	{
 		Title: '3:10 to Yuma',
 		Description:
